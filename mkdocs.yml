@@ -1,0 +1,34 @@
+site_name: OpenTelemetry Gunicorn Instrumentation
+site_description: OTEL tracing and metrics for Gunicorn WSGI servers
+site_author: OpenTelemetry Gunicorn Instrumentation Contributors
+
+repo_name: Agent-Hellboy/opentelemetry-instrumentation-gunicorn
+repo_url: https://github.com/Agent-Hellboy/opentelemetry-instrumentation-gunicorn
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.superfences
+
+plugins:
+  - search
+
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Quickstart: quickstart.md
+      - Configuration: configuration.md
+  - Implementation: implementation.md
+  - Troubleshooting: troubleshooting.md
+

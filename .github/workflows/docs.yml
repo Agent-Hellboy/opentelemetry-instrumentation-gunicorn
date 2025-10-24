@@ -2,9 +2,9 @@ name: Docs
 
 on:
   push:
-    tags:
-      - 'v*'
+    branches: [ main ]
   pull_request:
+    branches: [ main ]
 
 permissions:
   contents: read
@@ -34,7 +34,7 @@ jobs:
           path: site
 
   deploy:
-    if: github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v')
+    if: github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
     environment:

@@ -10,4 +10,3 @@ ENV OTEL_SERVICE_NAME=gunicorn-app
 EXPOSE 8000
 
 CMD ["gunicorn", "-c", "example/gunicorn.conf.py", "example.app:app"]
-

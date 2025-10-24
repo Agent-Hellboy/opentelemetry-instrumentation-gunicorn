@@ -54,16 +54,17 @@ gunicorn --workers 4 --bind 0.0.0.0:8000 app:app
 
 ## Metrics Collected
 
-| Metric | Type | Description |
-|--------|------|-------------|
-| `gunicorn.requests` | Counter | Total HTTP requests handled |
-| `gunicorn.request.duration` | Histogram | Request processing duration |
-| `gunicorn.worker.cpu.percent` | Gauge | Worker CPU usage percentage |
-| `gunicorn.worker.memory.rss` | Gauge | Worker memory usage in bytes |
+| Metric                        | Type      | Description                  |
+| ----------------------------- | --------- | ---------------------------- |
+| `gunicorn.requests`           | Counter   | Total HTTP requests handled  |
+| `gunicorn.request.duration`   | Histogram | Request processing duration  |
+| `gunicorn.worker.cpu.percent` | Gauge     | Worker CPU usage percentage  |
+| `gunicorn.worker.memory.rss`  | Gauge     | Worker memory usage in bytes |
 
 ## Framework Integrations
 
 ### Flask
+
 ```python
 from flask import Flask
 from opentelemetry.instrumentation.gunicorn import GunicornInstrumentor
@@ -75,6 +76,7 @@ GunicornInstrumentor().instrument()
 ```
 
 ### Django
+
 ```python
 # wsgi.py
 import os
@@ -88,6 +90,7 @@ application = get_wsgi_application()
 ```
 
 ### FastAPI
+
 ```python
 from fastapi import FastAPI
 from opentelemetry.instrumentation.gunicorn import GunicornInstrumentor
@@ -103,13 +106,13 @@ app = FastAPI()
 
 ### Environment Variables
 
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `OTEL_SERVICE_NAME` | Service name for telemetry | `unknown_service` |
-| `OTEL_GUNICORN_TRACE_WORKERS` | Enable worker metrics | `false` |
-| `OTEL_EXPORTER_OTLP_ENDPOINT` | OTLP collector endpoint | - |
-| `OTEL_TRACES_EXPORTER` | Trace exporter | `console` |
-| `OTEL_METRICS_EXPORTER` | Metrics exporter | `console` |
+| Variable                      | Description                | Default           |
+| ----------------------------- | -------------------------- | ----------------- |
+| `OTEL_SERVICE_NAME`           | Service name for telemetry | `unknown_service` |
+| `OTEL_GUNICORN_TRACE_WORKERS` | Enable worker metrics      | `false`           |
+| `OTEL_EXPORTER_OTLP_ENDPOINT` | OTLP collector endpoint    | -                 |
+| `OTEL_TRACES_EXPORTER`        | Trace exporter             | `console`         |
+| `OTEL_METRICS_EXPORTER`       | Metrics exporter           | `console`         |
 
 ### Advanced Configuration
 

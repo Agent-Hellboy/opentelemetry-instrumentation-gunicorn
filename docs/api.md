@@ -11,6 +11,7 @@ from opentelemetry.instrumentation.gunicorn import GunicornInstrumentor
 ### Methods
 
 #### `instrument()`
+
 Instruments Gunicorn to collect traces and metrics.
 
 ```python
@@ -22,6 +23,7 @@ GunicornInstrumentor().instrument()
 **Raises:** `Exception` if instrumentation fails
 
 #### `uninstrument()`
+
 Removes Gunicorn instrumentation.
 
 ```python
@@ -34,34 +36,35 @@ GunicornInstrumentor().uninstrument()
 
 ### Environment Variables
 
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `OTEL_GUNICORN_TRACE_WORKERS` | Enable worker CPU/memory metrics | `false` |
-| `OTEL_SERVICE_NAME` | Service name for telemetry | `unknown_service` |
-| `OTEL_TRACES_EXPORTER` | Trace exporter (`console`, `otlp`, `jaeger`) | `console` |
-| `OTEL_METRICS_EXPORTER` | Metrics exporter (`console`, `otlp`) | `console` |
+| Variable                      | Description                                  | Default           |
+| ----------------------------- | -------------------------------------------- | ----------------- |
+| `OTEL_GUNICORN_TRACE_WORKERS` | Enable worker CPU/memory metrics             | `false`           |
+| `OTEL_SERVICE_NAME`           | Service name for telemetry                   | `unknown_service` |
+| `OTEL_TRACES_EXPORTER`        | Trace exporter (`console`, `otlp`, `jaeger`) | `console`         |
+| `OTEL_METRICS_EXPORTER`       | Metrics exporter (`console`, `otlp`)         | `console`         |
 
 ### OTLP Configuration
 
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `OTEL_EXPORTER_OTLP_ENDPOINT` | OTLP endpoint | `http://localhost:4318` |
-| `OTEL_EXPORTER_OTLP_METRICS_ENDPOINT` | Metrics-specific OTLP endpoint | Uses `OTEL_EXPORTER_OTLP_ENDPOINT` |
-| `OTEL_EXPORTER_OTLP_PROTOCOL` | Protocol (`grpc`, `http/protobuf`) | `grpc` |
+| Variable                              | Description                        | Default                            |
+| ------------------------------------- | ---------------------------------- | ---------------------------------- |
+| `OTEL_EXPORTER_OTLP_ENDPOINT`         | OTLP endpoint                      | `http://localhost:4318`            |
+| `OTEL_EXPORTER_OTLP_METRICS_ENDPOINT` | Metrics-specific OTLP endpoint     | Uses `OTEL_EXPORTER_OTLP_ENDPOINT` |
+| `OTEL_EXPORTER_OTLP_PROTOCOL`         | Protocol (`grpc`, `http/protobuf`) | `grpc`                             |
 
 ### Jaeger Configuration
 
-| Variable | Description | Default |
-|----------|-------------|---------|
+| Variable                        | Description               | Default                             |
+| ------------------------------- | ------------------------- | ----------------------------------- |
 | `OTEL_EXPORTER_JAEGER_ENDPOINT` | Jaeger collector endpoint | `http://localhost:14268/api/traces` |
-| `OTEL_EXPORTER_JAEGER_USER` | Basic auth username | - |
-| `OTEL_EXPORTER_JAEGER_PASSWORD` | Basic auth password | - |
+| `OTEL_EXPORTER_JAEGER_USER`     | Basic auth username       | -                                   |
+| `OTEL_EXPORTER_JAEGER_PASSWORD` | Basic auth password       | -                                   |
 
 ## Metrics
 
 ### Request Metrics
 
 #### `gunicorn.requests` (Counter)
+
 - **Type:** Counter
 - **Description:** Total number of HTTP requests
 - **Attributes:**
@@ -70,6 +73,7 @@ GunicornInstrumentor().uninstrument()
   - `http.status_code`: Response status code
 
 #### `gunicorn.request.duration` (Histogram)
+
 - **Type:** Histogram
 - **Description:** Request duration in seconds
 - **Attributes:**
@@ -80,6 +84,7 @@ GunicornInstrumentor().uninstrument()
 ### Worker Metrics
 
 #### `gunicorn.worker.cpu.percent` (Gauge)
+
 - **Type:** Observable Gauge
 - **Description:** Worker CPU usage percentage
 - **Attributes:**
@@ -87,6 +92,7 @@ GunicornInstrumentor().uninstrument()
   - `worker.id`: Worker ID
 
 #### `gunicorn.worker.memory.rss` (Gauge)
+
 - **Type:** Observable Gauge
 - **Description:** Worker memory usage in bytes
 - **Attributes:**
@@ -100,10 +106,12 @@ GunicornInstrumentor().uninstrument()
 The instrumentation creates spans for:
 
 - **Request processing:** `gunicorn.request`
+
   - Attributes: `http.method`, `http.target`, `http.status_code`
   - Events: Request start/completion
 
 - **Worker lifecycle:** `gunicorn.worker`
+
   - Attributes: `worker.pid`, `worker.id`
   - Events: Worker start/shutdown
 

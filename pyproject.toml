@@ -47,6 +47,13 @@ docs = [
   "mkdocs-material >= 9.0.0",
   "mkdocs-material-extensions >= 1.1.0",
 ]
+dev = [
+  "ruff >= 0.1.0",
+  "mdformat == 0.7.22",
+  "mdformat-gfm",
+  "mdformat-frontmatter",
+  "mdformat-footnote",
+]
 
 [project.urls]
 Homepage = "https://github.com/Agent-Hellboy/gunicorn-prometheus-exporter"

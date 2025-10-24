@@ -92,6 +92,7 @@ app = FastAPI()
 For FastAPI applications, you have two options:
 
 ### Option 1: ASGI with Uvicorn Workers (Recommended)
+
 ```python
 # gunicorn.conf.py
 worker_class = "uvicorn.workers.UvicornWorker"
@@ -100,6 +101,7 @@ bind = "0.0.0.0:8000"
 ```
 
 ### Option 2: WSGI with Standard Workers
+
 ```python
 # main.py - Convert FastAPI to WSGI
 from fastapi import FastAPI

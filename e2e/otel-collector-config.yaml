@@ -19,4 +19,3 @@ service:
       receivers: [otlp]
       processors: [batch]
       exporters: [prometheus]
-

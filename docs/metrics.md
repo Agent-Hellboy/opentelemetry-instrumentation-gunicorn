@@ -1,22 +1,27 @@
 # Metrics
 
 ## Overview
+
 The instrumentation automatically collects comprehensive metrics for monitoring Gunicorn performance and application health.
 
 ## Request Metrics
 
 ### Counter: `gunicorn.requests`
+
 Tracks the total number of HTTP requests handled by Gunicorn workers.
 
 **Attributes:**
+
 - `http.method`: HTTP method (GET, POST, etc.)
 - `http.target`: Request path
 - `http.status_code`: HTTP response status code
 
 ### Histogram: `gunicorn.request.duration`
+
 Measures the duration of HTTP requests in seconds.
 
 **Attributes:**
+
 - `http.method`: HTTP method
 - `http.target`: Request path
 - `http.status_code`: HTTP response status code
@@ -24,23 +29,28 @@ Measures the duration of HTTP requests in seconds.
 ## Worker Metrics (when enabled)
 
 !!! note "Worker metrics require environment variable"
-    Set `OTEL_GUNICORN_TRACE_WORKERS=true` to enable worker CPU and memory metrics.
+Set `OTEL_GUNICORN_TRACE_WORKERS=true` to enable worker CPU and memory metrics.
 
 ### Gauge: `gunicorn.worker.cpu.percent`
+
 Reports CPU usage percentage for each Gunicorn worker process.
 
 **Attributes:**
+
 - `worker.pid`: Process ID of the worker
 - `worker.id`: Worker ID (0-based index)
 
 ### Gauge: `gunicorn.worker.memory.rss`
+
 Reports Resident Set Size (RSS) memory usage in bytes for each worker.
 
 **Attributes:**
+
 - `worker.pid`: Process ID of the worker
 - `worker.id`: Worker ID (0-based index)
 
 ## Prometheus Format Example
+
 ```
 # HELP gunicorn_requests_total Total Gunicorn handled requests
 # TYPE gunicorn_requests_total counter
@@ -65,6 +75,7 @@ gunicorn_worker_memory_rss_bytes{worker_pid="1234",worker_id="0"} 52428800
 ```
 
 ## Configuration
+
 Metrics are automatically collected when the instrumentation is enabled. Configure metric export using OpenTelemetry environment variables:
 
 ```bash
@@ -77,4 +88,5 @@ export OTEL_METRICS_EXPORTER="prometheus"
 ```
 
 ## Viewing Metrics
+
 Use tools like Prometheus, Grafana, or the OpenTelemetry Collector to collect and visualize these metrics.

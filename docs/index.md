@@ -1,6 +1,6 @@
 # OpenTelemetry Gunicorn Instrumentation
 
-[![PyPI version](https://badge.fury.io/py/opentelemetry-instrumentation-gunicorn.svg)](https://pypi.org/project/opentelemetry-instrumentation-gunicorn/)
+[![PyPI - Version](https://img.shields.io/pypi/v/opentelemetry-instrumentation-gunicorn.svg)](https://pypi.org/project/opentelemetry-instrumentation-gunicorn/)
 [![Python versions](https://img.shields.io/pypi/pyversions/opentelemetry-instrumentation-gunicorn.svg)](https://pypi.org/project/opentelemetry-instrumentation-gunicorn/)
 
 **Automatic OpenTelemetry tracing and metrics for Gunicorn WSGI servers.**
@@ -12,8 +12,6 @@ Gunicorn is a popular Python WSGI HTTP server that powers many production applic
 - **Automatic Tracing**: Request tracing with distributed context propagation
 - **Rich Metrics**: Request counts, duration histograms, and worker resource usage
 - **Zero Configuration**: Drop-in instrumentation with sensible defaults
-- **Framework Agnostic**: Works with Flask, Django, FastAPI, and any WSGI app
-
 
 ## Quick Start
 

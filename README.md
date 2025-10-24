@@ -1,6 +1,6 @@
 # OpenTelemetry Instrumentation for Gunicorn
 
-[![PyPI version](https://badge.fury.io/py/opentelemetry-instrumentation-gunicorn.svg)](https://pypi.org/project/opentelemetry-instrumentation-gunicorn/)
+[![PyPI - Version](https://img.shields.io/pypi/v/opentelemetry-instrumentation-gunicorn.svg)](https://pypi.org/project/opentelemetry-instrumentation-gunicorn/)
 [![Python versions](https://img.shields.io/pypi/pyversions/opentelemetry-instrumentation-gunicorn.svg)](https://pypi.org/project/opentelemetry-instrumentation-gunicorn/)
 [![Documentation](https://img.shields.io/badge/docs-mkdocs-blue.svg)](https://agent-hellboy.github.io/opentelemetry-instrumentation-gunicorn/)
 [![CI](https://github.com/Agent-Hellboy/opentelemetry-instrumentation-gunicorn/actions/workflows/ci.yml/badge.svg)](https://github.com/Agent-Hellboy/opentelemetry-instrumentation-gunicorn/actions/workflows/ci.yml)

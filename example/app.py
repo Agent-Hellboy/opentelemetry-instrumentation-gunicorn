@@ -6,7 +6,6 @@ from opentelemetry import trace
 from opentelemetry.sdk.trace import TracerProvider
 from opentelemetry.sdk.trace.export import BatchSpanProcessor, ConsoleSpanExporter
 from opentelemetry.instrumentation.flask import FlaskInstrumentor
-from opentelemetry.instrumentation.wsgi import OpenTelemetryMiddleware
 from opentelemetry.instrumentation.gunicorn import GunicornInstrumentor
 from opentelemetry import metrics as otel_metrics
 from opentelemetry.sdk.metrics import MeterProvider
@@ -49,7 +48,6 @@ otel_metrics.set_meter_provider(
 )
 
 app = Flask(__name__)
-app.wsgi_app = OpenTelemetryMiddleware(app.wsgi_app)
 FlaskInstrumentor().instrument_app(app)
 GunicornInstrumentor().instrument()
 

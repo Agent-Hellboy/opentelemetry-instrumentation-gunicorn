@@ -1,6 +1,7 @@
 site_name: OpenTelemetry Gunicorn Instrumentation
 site_description: OTEL tracing and metrics for Gunicorn WSGI servers
-site_author: OpenTelemetry Gunicorn Instrumentation Contributors
+site_author: Prince Roshan
+site_url: https://agent-hellboy.github.io/opentelemetry-instrumentation-gunicorn/
 
 repo_name: Agent-Hellboy/opentelemetry-instrumentation-gunicorn
 repo_url: https://github.com/Agent-Hellboy/opentelemetry-instrumentation-gunicorn
@@ -13,13 +14,42 @@ theme:
     - navigation.sections
     - navigation.top
     - content.code.copy
+    - content.code.annotate
+    - content.footnote.tooltips
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
 
 markdown_extensions:
   - admonition
   - toc:
       permalink: true
-  - pymdownx.highlight
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
   - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
 
 plugins:
   - search
@@ -28,7 +58,15 @@ nav:
   - Home: index.md
   - Getting Started:
       - Quickstart: quickstart.md
+      - Installation: installation.md
       - Configuration: configuration.md
+  - Usage:
+      - Flask: usage/flask.md
+      - Django: usage/django.md
+      - FastAPI: usage/fastapi.md
+  - Metrics: metrics.md
   - Implementation: implementation.md
+  - API Reference: api.md
   - Troubleshooting: troubleshooting.md
+  - Contributing: contributing.md
 

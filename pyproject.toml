@@ -42,6 +42,11 @@ test = [
   "pytest-cov >= 4.0.0",
   "opentelemetry-sdk ~= 1.38",
 ]
+docs = [
+  "mkdocs >= 1.5.0",
+  "mkdocs-material >= 9.0.0",
+  "mkdocs-material-extensions >= 1.1.0",
+]
 
 [project.urls]
 Homepage = "https://github.com/Agent-Hellboy/gunicorn-prometheus-exporter"

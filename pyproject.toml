@@ -56,9 +56,9 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/Agent-Hellboy/gunicorn-prometheus-exporter"
-Repository = "https://github.com/Agent-Hellboy/gunicorn-prometheus-exporter"
-Documentation = "https://github.com/Agent-Hellboy/gunicorn-prometheus-exporter#readme"
+Homepage = "https://github.com/Agent-Hellboy/opentelemetry-instrumentation-gunicorn"
+Repository = "https://github.com/Agent-Hellboy/opentelemetry-instrumentation-gunicorn"
+Documentation = "https://agent-hellboy.github.io/opentelemetry-instrumentation-gunicorn/"
 
 [project.entry-points."opentelemetry_instrumentors"]
 gunicorn = "opentelemetry.instrumentation.gunicorn:GunicornInstrumentor"

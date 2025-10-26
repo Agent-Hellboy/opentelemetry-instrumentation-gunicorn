@@ -4,6 +4,7 @@
 [![Python versions](https://img.shields.io/pypi/pyversions/opentelemetry-instrumentation-gunicorn.svg)](https://pypi.org/project/opentelemetry-instrumentation-gunicorn/)
 [![Documentation](https://img.shields.io/badge/docs-mkdocs-blue.svg)](https://agent-hellboy.github.io/opentelemetry-instrumentation-gunicorn/)
 [![CI](https://github.com/Agent-Hellboy/opentelemetry-instrumentation-gunicorn/actions/workflows/ci.yml/badge.svg)](https://github.com/Agent-Hellboy/opentelemetry-instrumentation-gunicorn/actions/workflows/ci.yml)
+[![PyPI Downloads](https://static.pepy.tech/personalized-badge/opentelemetry-instrumentation-gunicorn?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=GREEN&left_text=downloads)](https://pepy.tech/projects/opentelemetry-instrumentation-gunicorn)
 
 Automatic OpenTelemetry tracing and metrics for Gunicorn WSGI servers.
 
